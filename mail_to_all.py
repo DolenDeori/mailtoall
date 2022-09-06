@@ -2,6 +2,7 @@ from email.mime.text import MIMEText
 import smtplib
 import ssl
 import pandas as pd
+from email.mime.multipart import MIMEMultipart
 # GDSC_mails = pd.read_csv("GDSCML.csv")
 
 smtp_server = "smtp.gmail.com" # for Gmail
@@ -14,11 +15,6 @@ sender_email = "deepakdeori54@gmail.com"  # email address used to generate passw
 
 receiver_email = ["list of recipietns email"] # a list of recipients 
 password = "" # the 16 code generated
-
-# if you store credentials as env variables 
-# password = os.environ['EMAIL_CRED']
-
-from email.mime.multipart import MIMEMultipart
 
 msg = MIMEMultipart()
 msg["Subject"] = "YOur Subject"
