@@ -12,8 +12,8 @@ This program will take all the emails from a csv file and send a custom designed
 # Some prerequisite
 - you need to have python in your machine.
 - you need to run the following command. <br>
-for windows : `pip install pandas` <br>
-for macOS : `pip3 install pandas`
+for windows : `pip install -r requirements.txt` <br>
+for macOS : `pip3 install -r requirements.txt`
 
 # How to send emails
 
