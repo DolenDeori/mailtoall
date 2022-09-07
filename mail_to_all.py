@@ -1,29 +1,38 @@
 from email.mime.text import MIMEText
+import os
+import sys
 import smtplib
 import ssl
 import pandas as pd
 from email.mime.multipart import MIMEMultipart
-# GDSC_mails = pd.read_csv("GDSCML.csv")
+from config import *
 
 smtp_server = "smtp.gmail.com" # for Gmail
 port = 587  # For starttls
 
-sender_email = "deepakdeori54@gmail.com"  # email address used to generate password
-
-"""uncomment this when you have a csv file with a coloumn name "Email ID (personal)"""
-# receiver_email = [mail for mail in GDSC_mails["Email ID (personal)"]
-
-receiver_email = ["list of recipietns email"] # a list of recipients 
-password = "" # the 16 code generated
+print("Trying to connect...")
+try:
+    if os.path.exists("mails.csv"):
+        gdsc_mails = pd.read_csv("mails.csv")
+        receiver_email = [mail for mail in gdsc_mails["Email ID (personal)"]] #this will only work when you have a csv file with a coloumn name "Email ID (personal)
+    else:
+        receiver_email = target_users
+except:
+    print("\nWe need receiver emails!")
+    sys.exit()
 
 msg = MIMEMultipart()
-msg["Subject"] = "YOur Subject"
+msg["Subject"] = mail_subject
 msg["From"] = sender_email
 msg['To'] = ", ".join(receiver_email) 
 
 # reading the HTML file
-html_file = open("index.html", "r")
-read_html = html_file.read()
+try:
+    html_file = open("index.html", "r")
+    read_html = html_file.read()
+except FileNotFoundError:
+    print("\nmail(index.html) not found!")
+    sys.exit()
 
 # Making an HTML object to send with the email
 html = f"{read_html}"
