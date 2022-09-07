@@ -12,15 +12,14 @@ This program will take all the emails from a csv file and send a custom designed
 # Some prerequisite
 - you need to have python in your machine.
 - you need to run the following command. <br>
-for windows : `pip install -r requirements.txt` <br>
+for windows : `pip install -r requirements.txt`<br>
 for macOS : `pip3 install -r requirements.txt`
 
 # How to send emails
-
 - `cp sample_config.py config.py`
 - edit the config.py file with your required data.
 - edit the index.html with your required mailing data.
 - `python mail_to_all.py`
 
-## Note:
-config.py is ignored in git commits, so your credentials won't be visible to anyone if you do any PR and all.
+# Tracebacks
+if you get an error someting like `535, b'5.7.8 Username and Password not accepted.` or `a bytes-like object is required, not 'str'` just update your creadentials in the `config_data.py` file.

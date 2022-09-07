@@ -6,13 +6,15 @@ import smtplib
 import ssl
 import pandas as pd
 from email.mime.multipart import MIMEMultipart
-from config_data import *
+from config import *
 
 smtp_server = "smtp.gmail.com" # for Gmail
 port = 587  # For starttls
 
 if __name__ == "__main__":
     file_path = get_csv()
+
+    mail_subject = input("Enter the subject of the Email : ")
     try:
         if os.path.exists(file_path):
             gdsc_mails = pd.read_csv(file_path)
@@ -29,11 +31,8 @@ if __name__ == "__main__":
 
     # reading the HTML file
     try:
-        # html_file = open("index.html", "r")
-        # read_html = html_file.read()
-
-        with open("index.html", "r") as f:
-            read_html = f.read()
+        html_file = open("index.html", "r")
+        read_html = html_file.read()
     except FileNotFoundError:
         print("mail(index.html) not found!")
         sys.exit()
