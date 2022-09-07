@@ -14,3 +14,13 @@ This program will take all the emails from a csv file and send a custom designed
 - you need to run the following command. <br>
 for windows : `pip install pandas` <br>
 for macOS : `pip3 install pandas`
+
+# How to send emails
+
+- `cp sample_config.py config.py`
+- edit the config.py file with your required data.
+- edit the index.html with your required mailing data.
+- `python mail_to_all.py`
+
+## Note:
+config.py is ignored in git commits, so your credentials won't be visible to anyone if you do any PR and all.
