@@ -6,7 +6,7 @@ import smtplib
 import ssl
 import pandas as pd
 from email.mime.multipart import MIMEMultipart
-from config import *
+from config_data import *
 
 smtp_server = "smtp.gmail.com" # for Gmail
 port = 587  # For starttls
