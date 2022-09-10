@@ -23,4 +23,9 @@ for macOS : `pip3 install -r requirements.txt`
 - `python mail_to_all.py`
 
 # Tracebacks
-if you get an error someting like `535, b'5.7.8 Username and Password not accepted.` or `a bytes-like object is required, not 'str'` just update your creadentials in the `config.py`.
+if you get an error someting like `535, b'5.7.8 Username and Password not accepted.` or `a bytes-like object is required, not 'str'` just update your creadentials in the `config.py`
+
+# Note
+Don't make any changes or add any personal information to `sample_config.py`. If you want to add any information to run the program edit your `config.py` file. 👍
+
+# HAPPY CODING
