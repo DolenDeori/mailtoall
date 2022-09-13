@@ -1,6 +1,3 @@
-sender_email = "user@gmail.com"  # email address used to generate password
-password = "" # the 16 code generated
-
 def get_csv():
     import tkinter as tk
     from tkinter import filedialog
@@ -13,4 +10,3 @@ def get_csv():
 
     file_path = filedialog.askopenfilename(initialdir=current_dir, title ="Select your CSV file" , filetypes=(("csv files", "*.csv"),("all files", "*.*")))
     return file_path
-

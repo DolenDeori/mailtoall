@@ -1,3 +1,5 @@
+# Imports ---------------------------------- 
+
 from email.mime.text import MIMEText
 from operator import imod
 import os
@@ -6,13 +8,14 @@ import smtplib
 import ssl
 import pandas as pd
 from email.mime.multipart import MIMEMultipart
-from config import *
+from py_module.config import *
+from py_module import get_csv as gc
 
-smtp_server = "smtp.gmail.com" # for Gmail
+smtp_server = "smtp.gmail.com" # 
 port = 587  # For starttls
 
 if __name__ == "__main__":
-    file_path = get_csv()
+    file_path = gc.get_csv()
 
     mail_subject = input("Enter the subject of the Email : ")
     try:

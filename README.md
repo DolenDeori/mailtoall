@@ -16,6 +16,7 @@ for windows : `pip install -r requirements.txt`<br>
 for macOS : `pip3 install -r requirements.txt`
 
 # How to send emails
+- first `cd` into `py_module` folder the run the follwing command.
 - for macOS or Linux run `cp sample_config.py config.py`
 - for windows run `copy sample_config.py config.py`
 - edit the config.py file with your required data.
